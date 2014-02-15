@@ -1,4 +1,4 @@
-source :gemcutter
+source 'https://rubygems.org'
 
 group :production do
   gem 'sqlite3'
@@ -15,3 +15,4 @@ gem 'google_authenticator_auth'
 gem 'rails', '~> 3.2.0', :require => false
 gem 'sinatra', '~> 1.0'
 gem 'haml'
+gem 'exifr'

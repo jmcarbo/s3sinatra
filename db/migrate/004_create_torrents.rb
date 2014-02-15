@@ -2,7 +2,7 @@ class CreateTorrents < ActiveRecord::Migration
 
   def self.up
     create_table :torrents do |t|
-      t.column :id, :integer, :null => false
+#      t.column :id, :integer, :null => false
       t.column :bit_id, :integer
       t.column :info_hash, :string, :limit => 40
       t.column :metainfo, :binary

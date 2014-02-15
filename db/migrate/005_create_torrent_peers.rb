@@ -2,7 +2,7 @@ class CreateTorrentPeers < ActiveRecord::Migration
 
   def self.up
     create_table :torrent_peers do |t|
-      t.column :id, :integer, :null => false
+#      t.column :id, :integer, :null => false
       t.column :torrent_id, :integer
       t.column :guid, :string, :limit => 40
       t.column :ipaddr, :string

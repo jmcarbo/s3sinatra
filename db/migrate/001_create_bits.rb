@@ -2,7 +2,7 @@ class CreateBits < ActiveRecord::Migration
 
   def self.up
     create_table :bits do |t|
-      t.column :id,        :integer,  :null => false
+#      t.column :id,        :integer,  :null => false
       t.column :owner_id,  :integer
       t.column :parent_id, :integer
       t.column :lft,       :integer
