@@ -129,7 +129,7 @@ module S3
         photo_data = EXIFR::JPEG.new(tmpf.path).to_hash
         photo_data.each_pair do |key,value|
           tmp = key.to_s.gsub(/[^a-z0-9]+/i, '-').downcase.gsub(/-$/,'')
-          mdata[tmp] = value.to_s
+          mdata[tmp] = value.to_s if value.to_s != "\x00"
         end
       end
 

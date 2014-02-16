@@ -21,7 +21,7 @@
       %tr
         %td
           %a{ :href => "javascript:///", :onclick => "$('details-#{file.id}').toggle()" } #{file.name}
-          %div.details{ :id => "details-#{file.id}", :style => "display:none" }
+          %div.details{ :id => "details-#{file.id}", :style => "display:block" }
             - if @bucket.versioning_enabled? && !file.git_object.nil?
               %p Revision: #{file.git_object.objectish}
             - if file.torrent
