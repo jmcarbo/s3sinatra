@@ -2,3 +2,4 @@
 config/unicorn.rb
 storage/*
 db/*.db
+s3example.rb

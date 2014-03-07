@@ -156,16 +156,16 @@ module S3
     # create bucket
     put %r{^/([^\/]+)/?$} do
       begin
-	only_authorized
-	bucket = Bucket.find_root(params[:captures].first)
-	only_owner_of bucket
-	if params.has_key?('acl')
-	  bucket.grant(requested_acl(bucket))
-	elsif params.has_key?('versioning')
-	  manage_versioning(bucket)
-	else
-	  raise BucketAlreadyExists
-	end
+	      only_authorized
+	      bucket = Bucket.find_root(params[:captures].first)
+	      only_owner_of bucket
+	      if params.has_key?('acl')
+	        bucket.grant(requested_acl(bucket))
+	      elsif params.has_key?('versioning')
+	        manage_versioning(bucket)
+	      else
+	        raise BucketAlreadyExists
+	      end
 	headers 'Location' => env['PATH_INFO'], 'Content-Length' => 0.to_s
 	body ""
       rescue NoSuchBucket

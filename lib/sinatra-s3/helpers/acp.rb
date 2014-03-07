@@ -1,3 +1,5 @@
+require "rexml/document"
+
 module S3
   module Helpers
     module ACP
